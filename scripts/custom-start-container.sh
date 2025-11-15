@@ -33,7 +33,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-./sources/custom-host-docker-containers/run.sh -u 22.04 -w "$WORKSPACE_DIR" -l -p
+./sources/custom-host-docker-containers/run.sh -u 22.04 -w "$WORKSPACE_DIR" -l -v /opt/yocto_downloads_docker:/opt/yocto_downloads -v /opt/yocto_sstate_docker:/opt/yocto_sstate -p 
 
 if [ $? -ne 0 ]; then
     echo "#################################################"
